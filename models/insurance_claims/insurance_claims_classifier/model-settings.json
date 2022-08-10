@@ -1,0 +1,9 @@
+{
+    "name": "insurance_claims_classifier",
+    "implementation": "mlserver_sklearn.SKLearnModel",
+    "parameters":
+    {
+        "uri": "./insurance_claims_classifier.joblib",
+        "version": "v0.0.1"
+    }
+}

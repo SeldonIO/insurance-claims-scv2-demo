@@ -1,0 +1,35 @@
+apiVersion: mlops.seldon.io/v1alpha1
+kind: Pipeline
+metadata:
+  name: insurance_claims_with_model
+  namespace: seldon-mesh
+spec:
+  steps:
+    - name: insurance_claims_classifier
+      inputs:
+      - insurance_claims_with_model.inputs
+    - name: is_complex_conditional
+      inputs:
+      - insurance_claims_classifier.outputs.predict
+      tensorMap:
+        insurance_claims_classifier.outputs.predict: is_complex
+    - name: calculate_simple_claim_payout
+      inputs:
+      - insurance_claims_with_model.inputs.total_claim_amount
+      - insurance_claims_with_model.inputs.claim_id
+      triggers:
+      - is_complex_conditional.outputs.is_simple_claim
+    - name: calculate_complex_claim_payout
+      inputs:
+      - insurance_claims_with_model.inputs.total_claim_amount
+      - insurance_claims_with_model.inputs.claim_id
+      triggers:
+      - is_complex_conditional.outputs.is_complex_claim
+  output:
+    steps:
+    - calculate_simple_claim_payout
+    - calculate_complex_claim_payout
+    stepsJoin: any
+
+
+

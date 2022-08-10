@@ -1,0 +1,26 @@
+name: "is_complex_conditional"
+backend: "python"
+
+input [
+  {
+    name: "is_complex"
+    data_type: TYPE_BOOL
+    dims: [ 1 ]
+  }
+]
+output [
+  {
+    name: "is_simple_claim"
+    data_type: TYPE_BOOL
+    dims: [ 1 ]
+  }
+]
+output [
+  {
+    name: "is_complex_claim"
+    data_type: TYPE_BOOL
+    dims: [ 1 ]
+  }
+]
+
+instance_group [{ kind: KIND_CPU }]
