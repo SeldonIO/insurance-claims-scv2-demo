@@ -1,11 +1,11 @@
 # Insurance Claims demo for Seldon Core v2
 
-This is a demo that showcases streaming-based dataflow nature of Seldon Core v2. It implements the workflow of processing insurance claims, and shows how SCv2 can be used a generic dataflow processing engine.
+This is a demo that showcases streaming-based dataflow nature of Seldon Core v2. It implements the workflow of processing insurance claims, and shows how SCv2 can be used as a generic dataflow processing engine, beyond just model inference.
 
 
 ## Description
 
-The pipeline models a simple workflow of processing car insurance claims. Input is given in a CSV file (downloaded from Kaggle), and each input record represents a single claim to be processed. Here is how it looks like:
+The demo builds a simple workflow of processing car insurance claims. Input is given in a CSV file (downloaded from Kaggle), and each input record represents a single claim to be processed. Here is how it looks like:
 
 ![insurance claims pipeline](https://raw.githubusercontent.com/mlatcl/fbp-vs-soa/main/insurance_claims/diagrams/insurance_claims_fbp_min.png?raw=true)
 
@@ -19,7 +19,7 @@ The pipeline was originally described in this [paper](https://arxiv.org/abs/2204
 
 ## Structure
 
-Walkthrough is presented as a [notebook](/insurance_claims_pipeline.ipynb), so you probably want to start there. All models can be found in the [models folder](/models), and pipelines live in the [pipelines folder](/pipelines).
+Walkthrough is presented as a [notebook](/insurance_claims_pipeline.ipynb), so you probably want to start there. But make sure to go through the steps in the next section first! All models can be found in the [models folder](/models), and pipelines live in the [pipelines folder](/pipelines).
 
 
 ## How to run
@@ -59,7 +59,7 @@ make LOCAL_MODEL_FOLDER="${LOCAL_MODEL_FOLDER}" deploy-local
 The path above is the path to the folder where all the models are defined. In our case this is the [models folder](/models) of this repo. So the actual path might look something like this
 
 ```
-export LOCAL_MODEL_FOLDER=/home/usename/scv2-insurance-claims-demo/models
+export LOCAL_MODEL_FOLDER=/home/usename/insurance-claims-scv2-demo/models
 ```
 
 To stop SCv2, run this from the root directory:
