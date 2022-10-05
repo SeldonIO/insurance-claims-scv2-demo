@@ -24,32 +24,10 @@ Walkthrough is presented as a [notebook](/insurance_claims_pipeline.ipynb), so y
 
 ## How to run
 
-First off, you need to have [Seldon Core v2](https://github.com/SeldonIO/seldon-core-v2), so make sure to clone that. Here we will assume you are building SCv2 from source. Note that you might need to use `sudo` for some of the docker commands.
-
-### Building SCv2 images
-From root directory of SCv2 repo
-
-```
-cd scheduler
-make build
-# next line is for the first time build only
-make data-flow/opentelemetry-javaagent.jar
-
-make docker-build-all
-```
-
-### Building Seldon CLI
-From root directory of SCv2 repo
-
-```
-cd operator
-make build-seldon
-```
-
-Make sure to add Seldon CLI binary to your PATH.
+First off, you need to have Seldon Core v2 running, please follow these [docs](https://seldon-tech-seldon-core-v2.readthedocs-hosted.com/en/latest/) to install it. Remember to add Seldon CLI to your PATH variable.
 
 ### Starting SCv2
-This demo uses models defined locally. To allow SCv2 to see location of these models, we need to set a corresponding environment variable and pass it to the SCv2 start script. Again this assumes you are in the root of SCv2 repo.
+This demo uses models defined locally. To allow SCv2 to see location of these models, we need to set a corresponding environment variable and pass it to the SCv2 start script. This assumes you are in the root of SCv2 repo.
 
 ```
 export LOCAL_MODEL_FOLDER=/path/to/a/model/folder
@@ -60,12 +38,6 @@ The path above is the path to the folder where all the models are defined. In ou
 
 ```
 export LOCAL_MODEL_FOLDER=/home/usename/insurance-claims-scv2-demo/models
-```
-
-To stop SCv2, run this from the root directory:
-
-```
-make undeploy-local
 ```
 
 ### Demo requirements
@@ -80,7 +52,7 @@ pip install -r requirements.txt
 
 ### Running the demo
 
-Phew! A handful it was! With all the prerequisites out of the way, feel free to open and run the main [notebook](/insurance_claims_pipeline.ipynb).
+With all the prerequisites out of the way, feel free to open and run the main [notebook](/insurance_claims_pipeline.ipynb).
 
 # SCv2 features
 
