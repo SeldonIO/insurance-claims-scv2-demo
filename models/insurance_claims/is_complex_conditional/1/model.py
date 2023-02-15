@@ -71,7 +71,7 @@ class TritonPythonModel:
         # Every Python backend must iterate over everyone of the requests
         # and create a pb_utils.InferenceResponse for each of them.
         for request in requests:
-            is_complex = pb_utils.get_input_tensor_by_name(request, "is_complex").as_numpy()[0]
+            is_complex = pb_utils.get_input_tensor_by_name(request, "is_complex").as_numpy().astype(bool)[0]
             if is_complex:
                 # Create output tensors. You need pb_utils.Tensor
                 # objects to create pb_utils.InferenceResponse.

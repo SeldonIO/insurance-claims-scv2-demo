@@ -4,8 +4,8 @@ backend: "python"
 input [
   {
     name: "is_complex"
-    data_type: TYPE_BOOL
-    dims: [ 1 ]
+    data_type: TYPE_FP64
+    dims: [ 1, 1 ]
   }
 ]
 output [
