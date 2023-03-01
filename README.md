@@ -15,7 +15,7 @@ Second stage collects a dataset of claim complexity data - we collect input-labe
 
 Third and final stage is the deployment of a new pipeline where the entire classification process is replaced with the trained model, while payout part is reused.
 
-The pipeline was originally described in this [paper](https://arxiv.org/abs/2204.12781) and implemented in the accompanying [repo](https://github.com/mlatcl/fbp-vs-soa/tree/main/insurance_claims).
+The pipeline was originally described in this [paper](https://dl.acm.org/doi/abs/10.1145/3522664.3528601) and implemented in the accompanying [repo](https://github.com/mlatcl/fbp-vs-soa/tree/main/insurance_claims).
 
 ## Structure
 
