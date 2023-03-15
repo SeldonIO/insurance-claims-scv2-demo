@@ -29,9 +29,12 @@ First off, you need to have Seldon Core v2 running, please follow these [docs](h
 ### Starting SCv2
 This demo uses models defined locally. To allow SCv2 to see location of these models, we need to set a corresponding environment variable and pass it to the SCv2 start script. This assumes you are in the root of SCv2 repo.
 
+This demo is highly sensitive to the version of MLServer used (for boring technical reasons). It was most recently tested with `1.2.3`, so we fix this version before starting SCv2.
+
 ```
 export LOCAL_MODEL_FOLDER=/path/to/a/model/folder
-make LOCAL_MODEL_FOLDER="${LOCAL_MODEL_FOLDER}" deploy-local
+export MLSERVER_IMG=seldonio/mlserver:1.2.3
+make LOCAL_MODEL_FOLDER="${LOCAL_MODEL_FOLDER}" MLSERVER_IMG="${MLSERVER_IMG}" deploy-local
 ```
 
 The path above is the path to the folder where all the models are defined. In our case this is the [models folder](/models) of this repo. So the actual path might look something like this
@@ -63,5 +66,6 @@ This demo showcases a number of interesting features of SCv2. In no particular o
 * Trigger joins
 * Model reuse across pipelines
 * Inspect command of Seldon CLI
+* Using Triton and MLServer models in the same pipeline
 
 In addition, it provides examples of building GRPC inference requests for SCv2 with Python code, using custom Python code as a Triton model, and uploading a SKlearn pipeline to MLServer.
