@@ -15,7 +15,7 @@ Second stage collects a dataset of claim complexity data - we collect input-labe
 
 Third and final stage is the deployment of a new pipeline where the entire classification process is replaced with the trained model, while payout part is reused.
 
-The pipeline was originally described in this [paper](https://arxiv.org/abs/2204.12781) and implemented in the accompanying [repo](https://github.com/.mlatcl/fbp-vs-soa/tree/main/insurance_claims).
+The pipeline was originally described in this [paper](https://dl.acm.org/doi/abs/10.1145/3522664.3528601) and implemented in the accompanying [repo](https://github.com/mlatcl/fbp-vs-soa/tree/main/insurance_claims).
 
 ## Structure
 
@@ -24,7 +24,7 @@ Walkthrough is presented as a [notebook](/insurance_claims_pipeline.ipynb), so y
 
 ## How to run
 
-First off, you need to have Seldon Core v2 running, please follow these [docs](https://seldon-tech-seldon-core-v2.readthedocs-hosted.com/en/latest/) to install it. Remember to add Seldon CLI to your PATH variable.
+First off, you need to have Seldon Core v2 running, please follow these [docs](https://docs.seldon.io/projects/seldon-core/en/v2/contents/getting-started/docker-installation/index.html) to install it. Remember to add Seldon CLI to your PATH variable.
 
 ### Starting SCv2
 This demo uses models defined locally. To allow SCv2 to see location of these models, we need to set a corresponding environment variable and pass it to the SCv2 start script. This assumes you are in the root of SCv2 repo.
@@ -37,7 +37,7 @@ export MLSERVER_IMG=seldonio/mlserver:1.2.3
 make LOCAL_MODEL_FOLDER="${LOCAL_MODEL_FOLDER}" MLSERVER_IMG="${MLSERVER_IMG}" deploy-local
 ```
 
-The path above is the path to the folder where all the models are defined. In our case this is the [models folder](/models) of this repo. So the actual path might look something like this
+The path above is the path to the folder where all the models are defined. In our case this is the [models folder](/models) of this repo. So the actual path might look something like this.
 
 ```
 export LOCAL_MODEL_FOLDER=/home/usename/insurance-claims-scv2-demo/models
