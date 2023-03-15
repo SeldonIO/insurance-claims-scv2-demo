@@ -1,0 +1,8 @@
+{
+    "name": "calculate_simple_claim_payout_mlserver",
+    "implementation": "model.CalculateSimpleClaimPayout",
+    "parameters":
+    {
+        "version": "v0.0.1"
+    }
+}

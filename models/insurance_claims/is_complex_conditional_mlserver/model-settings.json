@@ -1,0 +1,8 @@
+{
+    "name": "is_complex_conditional_mlserver",
+    "implementation": "model.IsComplexConditional",
+    "parameters":
+    {
+        "version": "v0.0.1"
+    }
+}

@@ -4,7 +4,7 @@ import numpy as np
 
 import logging
 
-SIMPLE_CLAIM_VALUE_THRESHOLD = 5000
+SIMPLE_CLAIM_VALUE_THRESHOLD = 10000
 
 class TritonPythonModel:
     """Your Python model must use the same class name. Every Python model

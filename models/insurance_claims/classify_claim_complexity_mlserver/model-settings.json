@@ -1,0 +1,8 @@
+{
+    "name": "classify_claim_complexity_mlserver",
+    "implementation": "model.ClassifyClaimComplexity",
+    "parameters":
+    {
+        "version": "v0.0.1"
+    }
+}
